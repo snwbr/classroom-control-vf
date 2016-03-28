@@ -49,6 +49,6 @@ node default {
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-    content => "Hey, Puppet is fun!\n",
+    content => "This is lab 7\n",
   }
 }
