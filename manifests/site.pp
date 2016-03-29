@@ -51,4 +51,12 @@ node default {
     mode    => '0644',
     content => "This is lab 7\n",
   }
+  
+  host { 'host_file':
+    name         => 'www.snwbr.com',
+    ensure       => present,
+    comment      => 'Adding this new line to host file',
+    ip           => '216.58.193.110',
+  }
+  
 }
