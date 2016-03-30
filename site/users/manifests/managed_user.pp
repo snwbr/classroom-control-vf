@@ -3,7 +3,7 @@ define users::managed_user (
     $ssh_dir = "/home/${title}/.ssh"
  ) {
   user { "${title}":
-    ensure  => file,
+    ensure  => present,
     home    => "/home/${title}",
   }
   file { "/home/${title}":
