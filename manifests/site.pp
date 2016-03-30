@@ -46,6 +46,7 @@ node default {
   include users
   include skeleton
   include memcached
+  include users::admins
   
   notify { "Hello, my name is ${::hostname}": }
   
