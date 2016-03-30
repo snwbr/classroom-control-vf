@@ -9,9 +9,4 @@ define users::managed_user (
   file { "/home/${title}":
     ensure  => directory,
   }
-  group { "${title} - admins":
-    name    => "admins",
-    ensure  => present,
-    gid     => "1234",
-  }
 }
