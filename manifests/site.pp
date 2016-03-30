@@ -49,9 +49,8 @@ node default {
   
   notify { "Hello, my name is ${::hostname}": }
   
-  $virtual = $::virtual
-  if $virtual{
-    $virtual = capitalize($virtual)
+  if $::virtual != 'physical'{
+    $virtual = capitalize($::virtual)
     notify { "I'M VIRTUALIZED!! My platform is ${virtual}": }
   }
   
