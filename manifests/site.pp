@@ -50,8 +50,8 @@ node default {
   notify { "Hello, my name is ${::hostname}": }
   
   if $::virtual != 'physical'{
-    $virtual = capitalize($::virtual)
-    notify { "I'M VIRTUALIZED!! My platform is ${virtual}": }
+    $vir = capitalize($::virtual)
+    notify { "I'M VIRTUALIZED!! My platform is ${vir}": }
   }
   
   file { '/etc/motd':
