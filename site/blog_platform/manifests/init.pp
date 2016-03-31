@@ -1,6 +1,6 @@
 class blog_platform {
 
-  class { 'wordpress': require => User["wp_owner"],}
+  class { 'wordpress': }
   class { 'apache': }
   class { '::apache::mod::php': }
   class { '::mysql::server': }
@@ -14,5 +14,6 @@ class blog_platform {
   
   user { "wp_owner":
     ensure => present,
+    before => Class['wordpress'],
   }
 }
