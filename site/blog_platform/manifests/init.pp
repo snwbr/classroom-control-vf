@@ -1,6 +1,7 @@
 class blog_platform {
   
-  class { '::mysql::server': }
+  class { 'mysql::server': }
+  
   class { 'wordpress': 
     require => User["wp_owner"],
   }
