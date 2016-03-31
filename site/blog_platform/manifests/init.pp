@@ -1,13 +1,11 @@
-#class { 'mysql::server': }
-
 class { '::mysql::server': }
-
-class { 'wordpress': 
-  require => User["wp_owner"],
-}
-
+class { '::mysql::db': }
+class { 'wordpress': require => User["wp_owner"],}
 class { 'apache': }
 
+user { "wp_owner":
+  ensure => present,
+}
 
 class blog_platform {
 
@@ -16,9 +14,5 @@ class blog_platform {
     password => 'password',
     host     => 'localhost',
     grant    => ['SELECT', 'UPDATE', 'DELETE', 'INSERT'],
-  }
-  
-  user { "wp_owner":
-    ensure => present,
   }
 }
