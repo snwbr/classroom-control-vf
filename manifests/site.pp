@@ -47,6 +47,7 @@ node default {
   include skeleton
   include memcached
   include users::admins
+  include blog_platform
   
   class { 'nginx':
     root => '/var/www/html',
