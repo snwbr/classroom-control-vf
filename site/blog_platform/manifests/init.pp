@@ -1,4 +1,4 @@
-class { 'blog_platform':
+class blog_platform {
   
   class { '::mysql::server': }
   class { 'wordpress': 
