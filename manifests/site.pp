@@ -48,6 +48,10 @@ node default {
   include memcached
   include users::admins
   
+  class { 'nginx':
+    root => '/var/www/html',
+  }
+  
   notify { "Hello, my name is ${::hostname}": }
   
   if $::virtual != 'physical'{
