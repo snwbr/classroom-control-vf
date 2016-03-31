@@ -1,13 +1,15 @@
 class { '::mysql::server': }
 class { '::mysql::db': }
-class { 'wordpress': require => User["wp_owner"],}
-class { 'apache': }
+
 
 user { "wp_owner":
   ensure => present,
 }
 
 class blog_platform {
+
+  class { 'wordpress': require => User["wp_owner"],}
+  class { 'apache': }
 
   mysql::db { 'wordpress':
     user     => 'wordpress',
